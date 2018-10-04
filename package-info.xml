@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE package-info SYSTEM "http://www.simplemachines.org/xml/package-info">
+
+<package-info xmlns="http://www.simplemachines.org/xml/package-info" xmlns:smf="http://www.simplemachines.org/">
+	<id>SychO:NameHistory</id>
+	<name>Name History</name>
+	<type>modification</type>
+	<version>1.0</version>	
+	
+	<install for="2.0 - 2.0.99">
+		<redirect url="?action=admin;area=modsettings;sa=namehistory">redirect.txt</redirect>
+		<readme parsebbc="true">README.txt</readme>
+		<modification type="file">modifications.xml</modification>
+		<require-file name="Subs-NameHistory.php" destination="$sourcedir" />
+		<require-file name="NameHistory.template.php" destination="$themedir" />
+		<code>hooks.php</code>
+	</install>
+	
+	<uninstall for="2.0 - 2.0.99">
+		<modification type="file" reverse="true">modifications.xml</modification>
+		<remove-file name="Themes/default/NameHistory.template.php" />
+		<remove-file name="Sources/Subs-NameHistory.php" />
+		<code>hooks.php</code>
+	</uninstall>
+
+</package-info>

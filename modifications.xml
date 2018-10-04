@@ -1,0 +1,105 @@
+<?xml version="1.0"?>
+<!DOCTYPE modification SYSTEM "http://www.simplemachines.org/xml/modification">
+<modification xmlns="http://www.simplemachines.org/xml/modification" xmlns:smf="http://www.simplemachines.org/">
+<id>SychO</id>
+<version>1.0</version>
+
+<file name="$sourcedir/Profile-View.php">
+<operation>
+<search position="before"><![CDATA[// Are there things we don't show?
+	$context['disabled_fields'] = isset($modSettings['disabled_profile_fields']) ? array_flip(explode(',', $modSettings['disabled_profile_fields'])) : array();]]></search>
+<add><![CDATA[
+	// Load the NameHistory template.
+	loadTemplate('NameHistory');
+	
+	// context for NameHistory
+	$context['member']['namehistory'] = nameHistory($memID);
+]]></add>
+</operation>
+</file>
+
+<file name="$themedir/Profile.template.php">
+<operation>
+<search position="replace"><![CDATA[<h4>', $context['member']['name'], ']]></search>
+<add><![CDATA[<h4>', $context['member']['name']; 
+				// Show the name history as Drop Menu
+				if(!empty($modSettings['namehistory_show']) && !empty($modSettings['namehistory_dropmenu']))
+					template_namehistory_dropmenu($context['member']['namehistory']);
+				echo' ]]></add>
+</operation>
+<operation>
+<search position="after"><![CDATA[// Show the users signature.]]></search>
+<add><![CDATA[	// Show the name history
+	if(!empty($modSettings['namehistory_show']) && empty($modSettings['namehistory_dropmenu']))
+		template_namehistory($context['member']['namehistory']);
+	]]></add>
+</operation>
+</file>
+
+<file name="$sourcedir/Who.php">
+		<operation>
+			<search position="before"><![CDATA[
+		'mods' => array(]]></search>
+			<add><![CDATA[
+			// BEGIN MOD Name History
+			'<a href="http://custom.simplemachines.org/mods/index.php?mod=4187" target="_blank" class="new_win">Name History</a>, 1.0 &copy; 2018, <a href="http://sycho.22web.org">SychO</a>',
+			// END MOD Name History
+]]></add>
+		</operation>
+	</file>
+
+<file name="$languagedir/Modifications.english.php">
+	<operation>
+		<search position="before"><![CDATA[// Version: 2.0; Modifications]]></search>
+		<add><![CDATA[
+// NameHistory Mod By SychO
+$txt['namehistory_title'] = "Name History";
+$txt['namehistory_modsettings'] = "Name History Settings";
+$txt['namehistory_show'] = "Show Name History on Profile";
+$txt['namehistory_limit'] = "Max Number of Edits to Show";
+$txt['namehistory_permission'] = "Groups Allowed To see the Name History of users";
+$txt['namehistory_dropmenu'] = "Show Name History as a Dropmenu instead of a Block";
+$txt['namehistory_before'] = "Before";
+$txt['namehistory_after'] = "After";
+$txt['namehistory_date'] = "Date";
+]]></add>
+	</operation>
+</file>
+
+<file name="$languagedir/Modifications.spanish_latin.php" error="Skip">
+	<operation>
+		<search position="before"><![CDATA[// Version: 2.0; Modifications]]></search>
+		<add><![CDATA[
+// NameHistory Mod By SychO, Spanish Translation by Rock Lee
+$txt['namehistory_title'] = "Historia del nombre";
+$txt['namehistory_modsettings'] = "Configuraci&oacute;n del historial de nombres";
+$txt['namehistory_show'] = "Mostrar historial de nombres en el perfil";
+$txt['namehistory_limit'] = "N&uacute;mero m&aacute;ximo de ediciones para mostrar";
+$txt['namehistory_permission'] = "Grupos permitidos para ver el historial de nombres de los usuarios";
+$txt['namehistory_dropmenu'] = "Mostrar el historial de nombres como un men&uacute; desplegable en lugar de un bloque";
+$txt['namehistory_before'] = "Antes de";
+$txt['namehistory_after'] = "Despu&eacute;s de";
+$txt['namehistory_date'] = "Fecha";
+]]></add>
+	</operation>
+</file>
+
+<file name="$languagedir/Modifications.spanish_latin-utf8.php" error="Skip">
+	<operation>
+		<search position="before"><![CDATA[// Version: 2.0; Modifications]]></search>
+		<add><![CDATA[
+// NameHistory Mod By SychO, Spanish Translation by Rock Lee
+$txt['namehistory_title'] = "Historia del nombre";
+$txt['namehistory_modsettings'] = "Configuración del historial de nombres";
+$txt['namehistory_show'] = "Mostrar historial de nombres en el perfil";
+$txt['namehistory_limit'] = "Número máximo de ediciones para mostrar";
+$txt['namehistory_permission'] = "Grupos permitidos para ver el historial de nombres de los usuarios";
+$txt['namehistory_dropmenu'] = "Mostrar el historial de nombres como un menú desplegable en lugar de un bloque";
+$txt['namehistory_before'] = "Antes de";
+$txt['namehistory_after'] = "Después de";
+$txt['namehistory_date'] = "Fecha";
+]]></add>
+	</operation>
+</file>
+	
+</modification>
