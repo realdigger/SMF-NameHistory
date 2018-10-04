@@ -66,40 +66,40 @@ $txt['namehistory_date'] = "Date";
 	</operation>
 </file>
 
-<file name="$languagedir/Modifications.spanish_latin.php" error="Skip">
-	<operation>
-		<search position="before"><![CDATA[// Version: 2.0; Modifications]]></search>
-		<add><![CDATA[
-// NameHistory Mod By SychO, Spanish Translation by Rock Lee
-$txt['namehistory_title'] = "Historia del nombre";
-$txt['namehistory_modsettings'] = "Configuraci&oacute;n del historial de nombres";
-$txt['namehistory_show'] = "Mostrar historial de nombres en el perfil";
-$txt['namehistory_limit'] = "N&uacute;mero m&aacute;ximo de ediciones para mostrar";
-$txt['namehistory_permission'] = "Grupos permitidos para ver el historial de nombres de los usuarios";
-$txt['namehistory_dropmenu'] = "Mostrar el historial de nombres como un men&uacute; desplegable en lugar de un bloque";
-$txt['namehistory_before'] = "Antes de";
-$txt['namehistory_after'] = "Despu&eacute;s de";
-$txt['namehistory_date'] = "Fecha";
+	<file name="$languagedir/Modifications.russian.php" error="skip">
+		<operation>
+			<search position="before"><![CDATA[// Version: 2.0; Modifications]]></search>
+			<add><![CDATA[
+// NameHistory Mod By SychO
+$txt['namehistory_title'] = "История имени";
+$txt['namehistory_modsettings'] = "Настройки истории имени";
+$txt['namehistory_show'] = "Показывать историю имени в профиле";
+$txt['namehistory_limit'] = "Отображать максимальное количество изменений";
+$txt['namehistory_permission'] = "Группы, которые могут видеть историю изменения имени";
+$txt['namehistory_dropmenu'] = "Показывать историю в выпадающем меню вместо блока";
+$txt['namehistory_before'] = "До";
+$txt['namehistory_after'] = "После";
+$txt['namehistory_date'] = "Дата";
 ]]></add>
-	</operation>
-</file>
+		</operation>
+	</file>
 
-<file name="$languagedir/Modifications.spanish_latin-utf8.php" error="Skip">
-	<operation>
-		<search position="before"><![CDATA[// Version: 2.0; Modifications]]></search>
-		<add><![CDATA[
-// NameHistory Mod By SychO, Spanish Translation by Rock Lee
-$txt['namehistory_title'] = "Historia del nombre";
-$txt['namehistory_modsettings'] = "Configuración del historial de nombres";
-$txt['namehistory_show'] = "Mostrar historial de nombres en el perfil";
-$txt['namehistory_limit'] = "Número máximo de ediciones para mostrar";
-$txt['namehistory_permission'] = "Grupos permitidos para ver el historial de nombres de los usuarios";
-$txt['namehistory_dropmenu'] = "Mostrar el historial de nombres como un menú desplegable en lugar de un bloque";
-$txt['namehistory_before'] = "Antes de";
-$txt['namehistory_after'] = "Después de";
-$txt['namehistory_date'] = "Fecha";
+	<file name="$languagedir/Modifications.russian-utf8.php" error="skip">
+		<operation>
+			<search position="before"><![CDATA[// Version: 2.0; Modifications]]></search>
+			<add><![CDATA[
+// NameHistory Mod By SychO
+$txt['namehistory_title'] = "История имени";
+$txt['namehistory_modsettings'] = "Настройки истории имени";
+$txt['namehistory_show'] = "Показывать историю имени в профиле";
+$txt['namehistory_limit'] = "Отображать максимальное количество изменений";
+$txt['namehistory_permission'] = "Группы, которые могут видеть историю изменения имени";
+$txt['namehistory_dropmenu'] = "Показывать историю в выпадающем меню вместо блока";
+$txt['namehistory_before'] = "До";
+$txt['namehistory_after'] = "После";
+$txt['namehistory_date'] = "Дата";
 ]]></add>
-	</operation>
-</file>
+		</operation>
+	</file>
 	
 </modification>
